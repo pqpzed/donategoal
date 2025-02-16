@@ -1,0 +1,126 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: transparent;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.donation-goal {
+    text-align: center;
+    background-color: transparent;
+    padding: 0;
+    width: 800px;
+    max-width: 90%;
+    position: relative;
+}
+
+.progress-bar {
+    width: 100%;
+    height: 30px;
+    background-color: rgba(0, 0, 0, 0.85);
+    border-radius: 15px;
+    overflow: hidden;
+    position: relative;
+}
+
+.progress {
+    height: 100%;
+    width: 0%; /* Progresso inicial */
+    background: linear-gradient(90deg, #ff8c42, #ff6f61, #ff8c42);
+    background-size: 200% 100%;
+    border-radius: 15px;
+    animation: flow 2s linear infinite;
+    position: relative;
+}
+
+@keyframes flow {
+    0% {
+        background-position: 100% 0;
+    }
+    100% {
+        background-position: -100% 0;
+    }
+}
+
+.coroa {
+    width: 30px; /* Tamanho reduzido */
+    height: 30px;
+    background-image: url('coroa.png'); /* Imagem da coroa */
+    background-size: contain;
+    background-repeat: no-repeat;
+    position: absolute;
+    top: -1px; /* Ajuste fino para posicionar a coroa */
+    left: 0;
+    transform: translateX(-50%); /* Centraliza a coroa no ponto de progresso */
+    z-index: 1; /* Fica atrás dos textos */
+}
+
+.titulo-meta {
+    font-size: 16px;
+    font-weight: bold;
+    color: #fff;
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 5px 10px;
+    border-radius: 10px;
+    position: absolute;
+    top: 50%; /* Centraliza verticalmente */
+    left: 10px; /* Fixo no início da barra */
+    transform: translateY(-50%); /* Ajuste fino para centralizar */
+    z-index: 2; /* Fica acima da barra de progresso */
+}
+
+.progress-text {
+    font-size: 14px;
+    font-weight: bold;
+    color: #fff;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2; /* Fica acima da coroa */
+}
+
+.total-meta {
+    font-size: 14px;
+    font-weight: bold;
+    color: #fff;
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    z-index: 2; /* Fica acima da coroa */
+}
+
+.gatinho {
+    width: 45px;
+    height: 50px;
+    background-image: url('gatinho.png'); /* Imagem do gatinho */
+    background-size: 300px 50px;
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    animation: andar 20s linear infinite, animar-gatinho 1.5s steps(6) infinite;
+    z-index: 1; /* Fica atrás dos textos */
+}
+
+@keyframes andar {
+    0% {
+        left: -50px;
+    }
+    100% {
+        left: 100%;
+    }
+}
+
+@keyframes animar-gatinho {
+    0% {
+        background-position: 0 0;
+    }
+    100% {
+        background-position: -300px 0;
+    }
+}
